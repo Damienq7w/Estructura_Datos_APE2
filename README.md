@@ -95,9 +95,9 @@ Reparto por lenguaje: el par **Java** (Chalco y Tacuri) y el par **C++** (Tisale
 ---
 
 ## 📂 Organización de Carpetas
-
+ 
 Estructura física del repositorio:
-
+ 
 ```text
 ESTRUCTURA-DE-DATOS---APE-2/
 ├── Scr_Java/
@@ -161,9 +161,10 @@ ESTRUCTURA-DE-DATOS---APE-2/
 │
 ├── docs/
 │   ├── Capturas_Pruebas/
+│   │   ├── Java/
+│   │   └── Cpp/
 │   ├── Diagramas_UML/
 │   └── Informe_APE2_Estructura_de_Datos.pdf
 │
 ├── .gitignore
 └── README.md
-```
