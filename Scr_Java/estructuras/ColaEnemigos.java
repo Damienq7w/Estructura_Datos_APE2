@@ -1,6 +1,6 @@
 package estructuras;
 
-import java.util.LinkedList;
+import java.util.ArrayDeque;
 import java.util.Queue;
 
 import gestor.GestorJuego;
@@ -16,7 +16,7 @@ public class ColaEnemigos {
     private final Queue<Cozy> colaCircular;
 
     public ColaEnemigos() {
-        this.colaCircular = new LinkedList<>();
+        this.colaCircular = new ArrayDeque<>();
     }
 
     public void encolar(Cozy c) {

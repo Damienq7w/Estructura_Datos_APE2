@@ -56,10 +56,13 @@ public class GestorJuego {
 
     // Crea el comando, lo ejecuta de inmediato y lo registra en el
     // historial para que quede disponible para deshacer.
-    public void colocarTorreJugador(Torre t) {
+    public boolean colocarTorreJugador(Torre t) {
         ComandoColocarTorre comando = new ComandoColocarTorre(t, mapa);
         comando.ejecutar();
-        historial.registrar(comando);
+        if (comando.isExitosa()) {
+            historial.registrar(comando);
+        }
+        return comando.isExitosa();
     }
 
     public void mejorarTorreJugador(Torre t) {

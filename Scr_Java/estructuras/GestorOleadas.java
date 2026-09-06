@@ -1,6 +1,6 @@
 package estructuras;
 
-import java.util.LinkedList;
+import java.util.ArrayDeque;
 import java.util.Queue;
 
 import modelo.Oleada;
@@ -10,7 +10,7 @@ public class GestorOleadas {
     private final Queue<Oleada> oleadas;
 
     public GestorOleadas() {
-        this.oleadas = new LinkedList<>();
+        this.oleadas = new ArrayDeque<>();
     }
 
     public void agregarOleada(Oleada o) {

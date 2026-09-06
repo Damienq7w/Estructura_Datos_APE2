@@ -1,10 +1,9 @@
-import java.util.Scanner;
-
 import estructuras.ColaEnemigos;
 import estructuras.GestorOleadas;
 import estructuras.HistorialComandos;
 import estructuras.Mapa;
 import gestor.GestorJuego;
+import java.util.Scanner;
 import modelo.CatalogoTorres;
 import modelo.Coordenada;
 import modelo.Oleada;
@@ -21,7 +20,7 @@ public class Main {
 
         // Se precargan 8 oleadas con dificultad creciente; GestorJuego las
         // libera una por una cuando la ruta queda vacia (ver procesarQuantum).
-        for (int i = 1; i <= 8; i++) {
+        for (int i = 1; i <= 10; i++) {
             gestorOleadas.agregarOleada(Oleada.generar(i));
         }
 
@@ -94,7 +93,8 @@ public class Main {
         int columna = leerEntero(scanner, "Columna: ");
 
         Torre torre = CatalogoTorres.crear(indiceTipo, new Coordenada(fila, columna));
-        juego.colocarTorreJugador(torre);
+        boolean colocada = juego.colocarTorreJugador(torre);
+        System.out.println(colocada ? "Torre colocada." : "No se pudo colocar (casilla ocupada o sin espacio).");
     }
 
     private static void mejorarTorre(Scanner scanner, GestorJuego juego, Mapa mapa) {
