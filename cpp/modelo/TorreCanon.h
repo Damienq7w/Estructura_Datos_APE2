@@ -1,8 +1,16 @@
-#ifndef TORRECANON_H
-#define TORRECANON_H
+#ifndef TORRE_CANON_H
+#define TORRE_CANON_H
 
-// TODO: implementar segun Distribucion_Clases_APE2.md
-class TorreCanon {
+#include "Torre.h"
+
+// Torre de danio alto pero poco alcance. Sirve para "rematar" enemigos
+// cerca de tramos concretos de la ruta.
+class TorreCanon : public Torre {
+public:
+    explicit TorreCanon(const Coordenada& pos);
+
+    void mejorar() override;
+    std::string getTipo() const override;
 };
 
 #endif
