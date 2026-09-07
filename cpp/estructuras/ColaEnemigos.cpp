@@ -16,7 +16,7 @@ void ColaEnemigos::actualizarQuantum(Mapa& mapa, GestorJuego& estado) {
     int cantidadAProcesar = static_cast<int>(colaCircular.size());
 
     const std::vector<Coordenada>& ruta = mapa.getRuta();
-    const std::vector<Torre>& torresActivas = mapa.getTorresActivas();
+    std::vector<Torre*> torresActivas = mapa.getTorresActivas();
 
     for (int i = 0; i < cantidadAProcesar; i++) {
 
@@ -31,15 +31,14 @@ void ColaEnemigos::actualizarQuantum(Mapa& mapa, GestorJuego& estado) {
 
         // Todas las torres activas comprueban si pueden atacar
         // al enemigo ubicado en su posicion actual.
-        for (const Torre& torre : torresActivas) {
+        for (Torre* torre : torresActivas) {
 
             if (enemigo.estaVivo() &&
-                torre.estaEnRango(posActual)) {
+                torre->estaEnRango(posActual)) {
 
-                // La torre aplica su ataque al enemigo.
-                // Se requiere que atacar() permita modificar el enemigo.
-                // Si la clase Torre recibe Cozy&, se puede utilizar
-                // directamente sobre la referencia correspondiente.
+                // La torre aplica su ataque sobre la copia local del
+                // enemigo (la misma que luego se vuelve a encolar).
+                torre->atacar(enemigo);
             }
         }
 

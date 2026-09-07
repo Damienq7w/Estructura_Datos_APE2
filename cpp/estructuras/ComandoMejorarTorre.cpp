@@ -9,7 +9,7 @@ ComandoMejorarTorre::ComandoMejorarTorre(Torre* torre_)
 // deshacer despues), y recien ahi llama a mejorar().
 void ComandoMejorarTorre::ejecutar() {
     nivelAnterior = torre->getNivel();
-    danioAnterior = torre->getDanio();
+    danioAnterior = torre->getDano();
     alcanceAnterior = torre->getAlcance();
     torre->mejorar();
 }

@@ -1,5 +1,7 @@
 #include "Oleada.h"
 
+#include "CatalogoEnemigos.h"
+
 // Constructor privado de la oleada.
 Oleada::Oleada(int numero, const std::vector<Cozy>& enemigos)
     : numero(numero),

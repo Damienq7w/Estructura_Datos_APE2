@@ -54,7 +54,7 @@ Torre* Mapa::buscarTorreEn(const Coordenada& pos) const {
     // Recorre solo la parte activa del arreglo (0 .. cantidadTorres-1) y
     // compara posiciones con equals().
     for (int i = 0; i < cantidadTorres; i++) {
-        if (torres[i]->getPosicion().equals(pos)) {
+        if (torres[i]->getPosicion() == pos) {
             return torres[i];
         }
     }
